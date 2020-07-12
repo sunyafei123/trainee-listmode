@@ -18,5 +18,4 @@ public class Goods {
     private int number;
     private String place;
     private String time;
-    private long appId;
 }
