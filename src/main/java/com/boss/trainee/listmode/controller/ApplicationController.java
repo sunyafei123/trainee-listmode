@@ -37,7 +37,7 @@ public class ApplicationController {
     }
 
     @RequestMapping("/deleteApp/{appId}")
-    public String deleteGoods(@PathVariable int appId){
+    public String deleteApp(@PathVariable int appId){
         if(applicationService.deleteAppById(appId)==1){
             return "删除成功";
         }else {
@@ -46,7 +46,7 @@ public class ApplicationController {
     }
 
     @RequestMapping("/addApp")
-    public String addGoods(){
+    public String addApp(){
         List<Goods> goodsList=new ArrayList<>();
         Application apps=new Application("市场部",new Date(),"赵八",goodsList);
         if(applicationService.addApp(apps)==1){
@@ -57,7 +57,7 @@ public class ApplicationController {
     }
 
     @RequestMapping("/updateApp")
-    public String updateGoods(){
+    public String updateApp(){
         List<Goods> goodsList=new ArrayList<>();
 //        Application application=new Application(4,"人才部",new Date(),"刘五",goodsList);
         Application application=new Application(4,"市场部",new Date(),"赵八",goodsList);

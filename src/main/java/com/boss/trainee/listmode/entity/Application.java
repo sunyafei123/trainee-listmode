@@ -16,9 +16,13 @@ import java.util.List;
 @NoArgsConstructor
 public class Application {
     private long appId;
+
     private String department;
+
     private Date date;
+
     private String applicant;
+
     private List<Goods> goods;
 
     public Application(String department, Date date, String applicant, List<Goods> goods) {

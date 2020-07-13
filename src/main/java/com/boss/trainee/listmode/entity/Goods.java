@@ -13,11 +13,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Goods {
     private long id;
+
     private String name;
+
     private String type;
+
     private int number;
+
     private String place;
+
     private String time;
+
     private long appId;
 
     public Goods(String name, String type, int number, String place, String time, long appId) {

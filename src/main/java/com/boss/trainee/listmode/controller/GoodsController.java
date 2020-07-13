@@ -38,8 +38,8 @@ public class GoodsController {
         }
     }
 
-    @RequestMapping("/addGoods/{id}")
-    public String addGoods(@PathVariable int id){
+    @RequestMapping("/addGoods")
+    public String addGoods(){
         Goods goods=new Goods("鼠标","小型",30,"七楼","半个月",4);
         if(goodsService.addGoods(goods)==1){
             return "添加成功";
