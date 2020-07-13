@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/schema/mybatis-3-mapper.dtd">
+<mapper namespace="com.boss.trainee.listmode.dao.GoodsDao">
+
+    <select id="getGoodsById" parameterType="int" resultType="com.boss.trainee.listmode.entity.Goods">
+        select * from goods where goods.id=#{id}
+    </select>
+
+    <select id="getAllGoods" resultType="com.boss.trainee.listmode.entity.Goods">
+        select * from goods
+    </select>
+
+</mapper>
