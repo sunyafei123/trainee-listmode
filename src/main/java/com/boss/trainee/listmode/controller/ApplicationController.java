@@ -46,16 +46,26 @@ public class ApplicationController {
     }
 
     @RequestMapping("/addApp")
-
     public String addGoods(){
         List<Goods> goodsList=new ArrayList<>();
-
         Application apps=new Application("市场部",new Date(),"赵八",goodsList);
-
         if(applicationService.addApp(apps)==1){
             return "添加成功";
         }else {
             return "添加失败";
+        }
+    }
+
+    @RequestMapping("/updateApp")
+    public String updateGoods(){
+        List<Goods> goodsList=new ArrayList<>();
+//        Application application=new Application(4,"人才部",new Date(),"刘五",goodsList);
+        Application application=new Application(4,"市场部",new Date(),"赵八",goodsList);
+
+        if(applicationService.updateApp(application)==1){
+            return "更新成功";
+        }else {
+            return "更新失败";
         }
     }
 }

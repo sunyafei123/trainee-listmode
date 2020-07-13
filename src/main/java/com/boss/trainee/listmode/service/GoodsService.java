@@ -1,5 +1,6 @@
 package com.boss.trainee.listmode.service;
 import com.boss.trainee.listmode.entity.Goods;
+
 import java.util.List;
 
 /**
@@ -33,4 +34,11 @@ public interface GoodsService {
      * @return 1为成功 0为失败
      */
     int deleteGoods(int id);
+    /**
+     * 更新物品
+     * @param goods 物品goods
+     * @return 1为成功 0为失败
+     */
+
+    int updateGoods(Goods goods);
 }

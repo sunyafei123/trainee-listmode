@@ -38,13 +38,25 @@ public class GoodsController {
         }
     }
 
-    @RequestMapping("/addGoods")
-    public String addGoods(){
-        Goods goods=new Goods("鼠标","小型",30,"七楼","半个月",2);
+    @RequestMapping("/addGoods/{id}")
+    public String addGoods(@PathVariable int id){
+        Goods goods=new Goods("鼠标","小型",30,"七楼","半个月",4);
         if(goodsService.addGoods(goods)==1){
             return "添加成功";
         }else {
             return "添加失败";
         }
     }
+    @RequestMapping("/updateGoods")
+    public String updateGoods(){
+        Goods goods=new Goods(5,"鼠标","小型",30,"七楼","半个月",2);
+//        Goods goods=new Goods(5,"投影仪","大型",30,"七楼","半个月",2);
+
+        if(goodsService.updateGoods(goods)==1){
+            return "更新成功";
+        }else {
+            return "更新失败";
+        }
+    }
+
 }

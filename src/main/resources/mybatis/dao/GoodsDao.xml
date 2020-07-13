@@ -18,4 +18,7 @@
     <insert id="addGoods" parameterType="com.boss.trainee.listmode.entity.Goods">
         insert into goods(name,type,number,place,time,appId) values(#{name},#{type},#{number},#{place},#{time},#{appId})
     </insert>
+    <update id="updateGoods" parameterType="com.boss.trainee.listmode.entity.Goods">
+        update goods set name=#{name},type=#{type},number=#{number},place=#{place},time=#{time},appId=#{appId} where id=#{id}
+    </update>
 </mapper>

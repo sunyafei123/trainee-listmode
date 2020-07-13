@@ -40,4 +40,12 @@ public interface GoodsDao {
      * @return 1为成功 0为失败
      */
     int deleteGoods(@Param("id") int id);
+
+    /**
+     * 更新物品
+     * @param goods 物品
+     * @return 1为成功 0为失败
+     */
+
+    int updateGoods(Goods goods);
 }

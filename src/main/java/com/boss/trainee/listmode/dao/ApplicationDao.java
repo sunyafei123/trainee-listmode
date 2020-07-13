@@ -2,7 +2,6 @@ package com.boss.trainee.listmode.dao;
 
 import com.boss.trainee.listmode.entity.Application;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -42,6 +41,12 @@ public interface ApplicationDao {
      * @param app 一个申请表
      * @return 1为成功 0为失败
      */
-    @Options(useGeneratedKeys=true, keyProperty="Application.appId")
     int addApp(Application app);
+
+    /**
+     * 更新申请表
+     * @param app 一个申请表
+     * @return 1为成功 0为失败
+     */
+    int updateApp(Application app);
 }

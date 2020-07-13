@@ -35,4 +35,11 @@ public interface ApplicationService {
      * @return 1为成功 0为失败
      */
     int addApp(Application app);
+
+    /**
+     * 更新申请表
+     * @param app 一个申请表
+     * @return 1为成功 0为失败
+     */
+    int updateApp(Application app);
 }

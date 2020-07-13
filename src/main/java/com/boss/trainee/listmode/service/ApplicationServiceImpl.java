@@ -35,4 +35,9 @@ public class ApplicationServiceImpl implements ApplicationService {
     public int addApp(Application app) {
         return applicationDao.addApp(app);
     }
+
+    @Override
+    public int updateApp(Application app) {
+        return applicationDao.updateApp(app);
+    }
 }

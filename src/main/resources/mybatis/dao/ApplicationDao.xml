@@ -11,6 +11,7 @@
         <result column="number" property="number" jdbcType="INTEGER" />
         <result column="place" property="place" jdbcType="VARCHAR" />
         <result column="time" property="time" jdbcType="VARCHAR" />
+        <result column="appId" property="appId"/>
     </resultMap>
 
     <resultMap id="AppResultMap" type="com.boss.trainee.listmode.entity.Application">
@@ -22,27 +23,7 @@
     </resultMap>
 
 
-    <resultMap id="GoodsResultMap1" type="com.boss.trainee.listmode.entity.Goods">
-        <id property="id" column="id" />
-        <result column="name" property="name" jdbcType="VARCHAR" />
-        <result column="type" property="type" jdbcType="VARCHAR" />
-        <result column="number" property="number" jdbcType="INTEGER" />
-        <result column="place" property="place" jdbcType="VARCHAR" />
-        <result column="time" property="time" jdbcType="VARCHAR" />
-        <result column="appId" property="appId"/>
-    </resultMap>
-
-    <resultMap id="AppResultMap1" type="com.boss.trainee.listmode.entity.Application">
-        <id property="appId" column="appId" />
-        <result column="department" property="department" jdbcType="VARCHAR" />
-        <result column="date" property="date" javaType="Date" jdbcType="DATE"/>
-        <result column="applicant" property="applicant" jdbcType="VARCHAR" />
-        <collection property="goods" ofType="com.boss.trainee.listmode.entity.Goods"  resultMap="GoodsResultMap1"/>
-    </resultMap>
-
-
-
-    <select id="getAppById" parameterType="int" resultMap="AppResultMap1">
+    <select id="getAppById" parameterType="int" resultMap="AppResultMap">
         select * from application left outer join goods on application.appId=goods.appId  where application.appId=#{appId}
     </select>
 
@@ -57,4 +38,10 @@
     <insert id="addApp" parameterType="com.boss.trainee.listmode.entity.Application" >
         insert into application(department,date,applicant) values(#{department},#{date},#{applicant})
     </insert>
+
+    <update id="updateApp" parameterType="com.boss.trainee.listmode.entity.Application" >
+        update application set department=#{department},date=#{date},applicant=#{applicant} where appId=#{appId}
+    </update>
+
+
 </mapper>
