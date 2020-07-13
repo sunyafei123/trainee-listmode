@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -16,16 +17,30 @@ import java.util.List;
 @Repository
 public interface ApplicationDao {
     /**
-     * 获取全部申请单
+     * 获取全部申请
      * @return 所有申请
      */
-    List<Application> getAll();
+    List<Application> getAllApp();
 
     /**
-     * 通过appId查询
+     * 通过appId查询单个申请
      * @param appId id
      * @return 单个申请
      */
 
-    Application getById(@Param("appId")int appId);
+    Application getAppById(@Param("appId")int appId);
+
+    /**
+     *
+     * @param appId
+     * @return
+     */
+    int deleteAppById(@Param("appId")int appId);
+
+    /**
+     *
+     * @param app
+     * @return
+     */
+    int addApp(Application app);
 }

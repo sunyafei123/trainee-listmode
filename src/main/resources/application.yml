@@ -1,9 +1,12 @@
 spring:
+  mvc:
+    format:
+      date: yyyy-MM-dd
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 12345
-    url: jdbc:mysql://localhost:3306/trainee-listmode?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    url: jdbc:mysql://175.24.10.53:3306/trainee-listmode?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
 mybatis:
   type-aliases-package: com.boss.trainee.listmode.entity
   mapper-locations: classpath:mybatis/dao/*.xml

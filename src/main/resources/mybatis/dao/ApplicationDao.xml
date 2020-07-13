@@ -16,20 +16,21 @@
     <resultMap id="AppResultMap" type="com.boss.trainee.listmode.entity.Application">
         <id property="appId" column="appId" />
         <result column="department" property="department" jdbcType="VARCHAR" />
-        <result column="date" property="date" jdbcType="DATE" />
+        <result column="date" property="date" javaType="Date" jdbcType="DATE"/>
         <result column="applicant" property="applicant" jdbcType="VARCHAR" />
         <collection property="goods" ofType="com.boss.trainee.listmode.entity.Goods"  resultMap="GoodsResultMap"/>
     </resultMap>
+
     
-    <select id="selectGoods" parameterType="int" resultType="com.boss.trainee.listmode.entity.Goods">
-        select * from goods where appId=#{appId}
-    </select>
-    
-    <select id="getById" parameterType="int" resultMap="AppResultMap">
+    <select id="getAppById" parameterType="int" resultMap="AppResultMap">
         select * from application left outer join goods on application.appId=goods.appId  where application.appId=#{appId}
     </select>
 
-    <select id="getAll" resultMap="AppResultMap">
+    <select id="getAllApp" resultMap="AppResultMap">
         select * from application left outer join goods on application.appId=goods.appId
     </select>
+
+    <delete id="deleteAppById" parameterType="int">
+        delete from application where application.appId=#{appId}
+    </delete>
 </mapper>

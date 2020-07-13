@@ -1,7 +1,10 @@
 package com.boss.trainee.listmode.dao;
 
+import com.boss.trainee.listmode.entity.Goods;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @Author syf
@@ -10,4 +13,15 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface GoodsDao {
+    /**
+     *
+     * @return
+     */
+    List<Goods> getAllGoods();
+
+    Goods getGoodsById(int id);
+
+    int addGoods(Goods goods);
+
+    int deleteGoods(int id);
 }
