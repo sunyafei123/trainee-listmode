@@ -1,7 +1,4 @@
 spring:
-  mvc:
-    format:
-      date: yyyy-MM-dd
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
@@ -10,3 +7,4 @@ spring:
 mybatis:
   type-aliases-package: com.boss.trainee.listmode.entity
   mapper-locations: classpath:mybatis/dao/*.xml
+

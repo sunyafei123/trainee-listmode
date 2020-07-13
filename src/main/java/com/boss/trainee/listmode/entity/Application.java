@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,4 +20,11 @@ public class Application {
     private Date date;
     private String applicant;
     private List<Goods> goods;
+
+    public Application(String department, Date date, String applicant, List<Goods> goods) {
+        this.department = department;
+        this.date = date;
+        this.applicant = applicant;
+        this.goods = goods;
+    }
 }

@@ -18,4 +18,14 @@ public class Goods {
     private int number;
     private String place;
     private String time;
+    private long appId;
+
+    public Goods(String name, String type, int number, String place, String time, long appId) {
+        this.name = name;
+        this.type = type;
+        this.number = number;
+        this.place = place;
+        this.time = time;
+        this.appId = appId;
+    }
 }

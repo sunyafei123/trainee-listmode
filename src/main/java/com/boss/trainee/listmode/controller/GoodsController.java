@@ -28,4 +28,23 @@ public class GoodsController {
     public Goods getGoodsById(@PathVariable int id){
         return goodsService.getGoodsById(id);
     }
+
+    @RequestMapping("/deleteGoods/{id}")
+    public String deleteGoods(@PathVariable int id){
+        if(goodsService.deleteGoods(id)==1){
+            return "删除成功";
+        }else {
+            return "删除失败";
+        }
+    }
+
+    @RequestMapping("/addGoods")
+    public String addGoods(){
+        Goods goods=new Goods("鼠标","小型",30,"七楼","半个月",2);
+        if(goodsService.addGoods(goods)==1){
+            return "添加成功";
+        }else {
+            return "添加失败";
+        }
+    }
 }

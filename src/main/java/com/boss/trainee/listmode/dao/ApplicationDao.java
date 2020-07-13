@@ -2,11 +2,11 @@ package com.boss.trainee.listmode.dao;
 
 import com.boss.trainee.listmode.entity.Application;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -24,23 +24,24 @@ public interface ApplicationDao {
 
     /**
      * 通过appId查询单个申请
-     * @param appId id
+     * @param appId 申请表id
      * @return 单个申请
      */
 
     Application getAppById(@Param("appId")int appId);
 
     /**
-     *
-     * @param appId
-     * @return
+     *通过appId删除一个申请表
+     * @param appId 申请表id
+     * @return 1为成功 0为失败
      */
     int deleteAppById(@Param("appId")int appId);
 
     /**
-     *
-     * @param app
-     * @return
+     *添加一个申请表
+     * @param app 一个申请表
+     * @return 1为成功 0为失败
      */
+    @Options(useGeneratedKeys=true, keyProperty="Application.appId")
     int addApp(Application app);
 }

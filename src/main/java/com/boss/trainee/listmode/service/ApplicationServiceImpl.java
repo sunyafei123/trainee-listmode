@@ -5,7 +5,6 @@ import com.boss.trainee.listmode.entity.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -34,6 +33,6 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public int addApp(Application app) {
-        return 0;
+        return applicationDao.addApp(app);
     }
 }

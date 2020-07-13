@@ -11,5 +11,11 @@
     <select id="getAllGoods" resultType="com.boss.trainee.listmode.entity.Goods">
         select * from goods
     </select>
+    <delete id="deleteGoods" parameterType="int">
+        delete from goods where id=#{id}
+    </delete>
 
+    <insert id="addGoods" parameterType="com.boss.trainee.listmode.entity.Goods">
+        insert into goods(name,type,number,place,time,appId) values(#{name},#{type},#{number},#{place},#{time},#{appId})
+    </insert>
 </mapper>
